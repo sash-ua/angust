@@ -1,0 +1,88 @@
+{
+  "name": "Angust",
+  "version": "0.0.1",
+  "description": "Angust for manipulation with app state in Angular4+ apps",
+  "homepage": "https://github.com/sash-ua/angust",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sash-ua/angust.git"
+  },
+  "keywords": [
+    "monads",
+    "typescript",
+    "javascript",
+    "state",
+    "monad-ts",
+    "functional-js",
+    "angular",
+    "redux",
+    "flux",
+    "angular4",
+    "angular module"
+  ],
+  "scripts": {
+    "build": "npm-run-all -p -r tsc:watch webpack  lite",
+    "build:prod": "npm-run-all -p -r tsc:watch webpack:prod  lite",
+    "test": "karma start karma.conf.js",
+    "tsc:watch": "tsc -w -d",
+    "webpack": "webpack --watch",
+    "webpack:prod": "webpack --watch -p --config ./webpack.config.prod.js",
+    "webpack:state": "webpack --watch --config ./webpack.config.state.js",
+    "webpack:state:prod": "webpack --watch -p --config ./webpack.config.state.prod.js",
+    "lite": "lite-server -o",
+    "map": "source-map-explorer dist/bundle.js",
+    "tsc": "tsc",
+    "test:server": "http-server -p 3000 -c-1 --cors",
+    "lite:dg": "lite-server -c bs-config-doc-gen.json"
+  },
+  "module": "index.js",
+  "main": "lib/angust.umd.js",
+  "licenses": [
+    {
+      "type": "Apache 2.0"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Alex Tranchenko",
+      "email": "tranchenkoa@gmail.com"
+    }
+  ],
+  "dependencies": {
+    "@angular/common": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/router": "^4.0.0",
+    "monad-ts": "^0.3.1"
+  },
+  "devDependencies": {
+    "@types/async": "^2.0.40",
+    "@types/browser-sync": "^0.0.34",
+    "@types/core-js": "^0.9.41",
+    "@types/jasmine": "2.5.47",
+    "@types/node": "^7.0.12",
+    "@types/rimraf": "0.0.28",
+    "async": "^2.3.0",
+    "awesome-typescript-loader": "^3.1.2",
+    "browser-sync": "^2.18.8",
+    "es6-shim": "^0.35.3",
+    "http-server": "^0.9.0",
+    "isparta-loader": "^2.0.0",
+    "jasmine-core": "^2.5.2",
+    "jasmine-spec-reporter": "^3.2.0",
+    "karma": "^1.6.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.1",
+    "karma-htmlfile-reporter": "^0.3.5",
+    "karma-jasmine": "^1.1.0",
+    "karma-sourcemap-loader": "^0.3.7",
+    "karma-webpack": "^2.0.3",
+    "lite-server": "^2.3.0",
+    "npm-run-all": "^4.0.2",
+    "source-map-explorer": "^1.3.3",
+    "source-map-support": "^0.4.14",
+    "ts-loader": "^2.0.3",
+    "ts-node": "^3.0.2",
+    "typescript": "^2.2.2",
+    "webpack": "^2.4.1"
+  }
+}
