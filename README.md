@@ -1,3 +1,4 @@
+[![npm](https://img.shields.io/npm/dw/localeval.svg)](https://github.com/sash-ua/angust)
 [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/sash-ua/angust)
 
 
