@@ -159,6 +159,6 @@ If first argument is string function use Router.navigateByUrl() to navigate. Nav
 
 ## License
 
-Monad_ts is copyright (c) 2017 - present Alex Tranchenko tranchenkoa@gmail.com .
+Angust is copyright (c) 2017 - present Alex Tranchenko tranchenkoa@gmail.com .
 
-Monad_ts is free software, licensed under the Apache License, Version 2.0. See the file LICENSE.md in this distribution for more details.
+Angust is free software, licensed under the Apache License, Version 2.0. See the file LICENSE.md in this distribution for more details.
