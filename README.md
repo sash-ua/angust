@@ -1,4 +1,4 @@
-[![npm](https://img.shields.io/npm/dw/localeval.svg)](https://github.com/sash-ua/angust)
+[![npm](https://img.shields.io/npm/dt/express.svg)](https://github.com/sash-ua/angust)
 [![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)](https://github.com/sash-ua/angust)
 
 
@@ -62,7 +62,7 @@ or
 
 ## Setup
 
-**A** Create an initialization state object to initialize Store. This object should contain complete range of defined
+**A.** Create an initialization state object to initialize Store. This object should contain complete range of defined
  to store elements. It should be statically analyzable for AOT, therefore it shouldn't have calculated values for AOT
  compatibility.
  
@@ -72,7 +72,7 @@ export const INIT_STATE = {
 	svg_attrs: []
 	}
 ```
-**B** In your app's main module, import an initialization state object(`INIT_STATE`) and use StoreModule.provideStore
+**B.** In your app's main module, import an initialization state object(`INIT_STATE`) and use StoreModule.provideStore
 (INIT_STATE) to provide it to Angular.
 ```
 import {StoreModule} from "angust";
@@ -86,7 +86,7 @@ import {INIT_STATE} from "./store/store.init";
 })
 export class AppModule {}
 ```
-**C** You can then inject the Store service into your components and services.
+**C.** You can then inject the Store service into your components and services.
  ```
  import {Store} from "angust";
  
@@ -161,4 +161,5 @@ If first argument is string function use Router.navigateByUrl() to navigate. Nav
 
 Angust is copyright (c) 2017 - present Alex Tranchenko tranchenkoa@gmail.com .
 
-Angust is free software, licensed under the Apache License, Version 2.0. See the file LICENSE.md in this distribution for more details.
+Angust is a free software, licensed under the Apache License, Version 2.0. See the file LICENSE.md in this
+distribution for more details.
