@@ -1,6 +1,6 @@
 {
   "name": "angust",
-  "version": "0.0.2",
+  "version": "0.0.1",
   "description": "Angust for manipulation with app state in Angular4+ apps",
   "homepage": "https://github.com/sash-ua/angust",
   "repository": {
@@ -21,19 +21,16 @@
     "angular module"
   ],
   "scripts": {
-    "build": "npm-run-all -p -r tsc:watch webpack  lite",
-    "build:prod": "npm-run-all -p -r tsc:watch webpack:prod  lite",
+    "build": "npm-run-all -p -r tsc:watch webpack",
+    "build:prod": "npm-run-all -p -r tsc:watch webpack:prod",
     "test": "karma start karma.conf.js",
     "tsc:watch": "tsc -w -d",
     "webpack": "webpack --watch",
     "webpack:prod": "webpack --watch -p --config ./webpack.config.prod.js",
-    "webpack:state": "webpack --watch --config ./webpack.config.state.js",
-    "webpack:state:prod": "webpack --watch -p --config ./webpack.config.state.prod.js",
     "lite": "lite-server -o",
     "map": "source-map-explorer lib/angust.umd.js",
     "tsc": "tsc",
-    "test:server": "http-server -p 3000 -c-1 --cors",
-    "lite:dg": "lite-server -c bs-config-doc-gen.json"
+    "test:server": "http-server -p 3000 -c-1 --cors"
   },
   "module": "index.js",
   "main": "lib/angust.umd.js",

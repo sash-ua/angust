@@ -1,3 +1,10 @@
+# 0.0.3 (2017-06-24)
+
+### Changes
+
+**Store** small fix to prevent weird behavior.
+
+
 # 0.0.2 (2017-06-10)
 
 ### Changes

@@ -1,7 +1,7 @@
 
 import {NavigationEnd, Router} from "@angular/router";
 import {Injectable} from "@angular/core";
-import { Location } from '@angular/common';
+import {Location} from '@angular/common';
 import {StoreService} from "./store.service";
 import {State} from "monad-ts";
 import {S} from "./types/s";
@@ -34,23 +34,25 @@ export class Store<T> extends StoreService<T>{
         INIT_STATE: any
     ){
         super(router, location);
-        /**
-         * Subscription for current Router URL, if URL changes then URL will change  in app state store.
-         * @type {Subscription}
-         */
-        this.routerUrlSubscription$ = this.router.events.subscribe((ev: NavigationEnd)=>{
-            if(ev instanceof NavigationEnd) {
-                this.state.put((v: S)=>{
-                    v.currentUrl = [ev.url]; return v
-                })
-            }
-        });
 
         /**
          * Initialize store's state. Required - _URL, optional - INIT_STATE prop.
          * @type {State}
          */
         this.state = new State({...this._URL, ...INIT_STATE});
+
+        /**
+         * Subscription for current Router URL, if URL changes then URL will change in app state store.
+         * @type {Subscription}
+         */
+        this.routerUrlSubscription$ = this.router.events.subscribe((ev: NavigationEnd)=>{
+            if(ev instanceof NavigationEnd) {
+                this.state.put((v: S)=>{
+                    v.currentUrl = [ev.url];
+                    return v
+                })
+            }
+        });
     }
 }
 
