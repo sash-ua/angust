@@ -4,6 +4,7 @@
 
 # Angust
 
+
 Angust is Angular4+ module(service) implements monad State to manipulate app's state. [Example app](https://github.com/sash-ua/gen_drift_monad-ts_a4).
 
 **Introduction**
