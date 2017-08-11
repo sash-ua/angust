@@ -3,7 +3,6 @@ import {Router} from "@angular/router";
 import {InjectionToken} from "@angular/core";
 import {Store} from "./store";
 import {Location} from '@angular/common';
-
 /**
  * factory function.
  * @param {Router} router - DI.
@@ -34,4 +33,4 @@ export function  provideStore(initState: any){
     ]
 }
 
-//Copyright (c) 2017 Alex Tranchenko. All rights reserved.
+// Copyright (c) 2017 Alex Tranchenko. All rights reserved.

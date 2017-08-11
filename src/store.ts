@@ -5,6 +5,7 @@ import {Location} from '@angular/common';
 import {StoreService} from "./store.service";
 import {State} from "monad-ts";
 import {S} from "./types/s";
+
 /**
  * Class Store - Angular service that provides monad State to Angular app.
  */
@@ -56,4 +57,4 @@ export class Store<T> extends StoreService<T>{
     }
 }
 
-//Copyright (c) 2017 Alex Tranchenko. All rights reserved.
+// Copyright (c) 2017 Alex Tranchenko. All rights reserved.

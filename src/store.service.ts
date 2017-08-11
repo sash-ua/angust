@@ -92,4 +92,4 @@ export class StoreService<T>{
     }
 }
 
-//Copyright (c) 2017 Alex Tranchenko. All rights reserved.
+// Copyright (c) 2017 Alex Tranchenko. All rights reserved.

@@ -1,3 +1,13 @@
+# 0.0.4 (2017-08-11)
+
+### Bugs fixed
+
+Moved `dependencies` to `devDependencies` in package.json to prevent AOT and WebPack some compile errors.
+
+### Changes
+
+Dependencies update.
+
 # 0.0.3 (2017-06-24)
 
 ### Changes

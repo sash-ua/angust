@@ -30,7 +30,11 @@
     "lite": "lite-server -o",
     "map": "source-map-explorer lib/angust.umd.js",
     "tsc": "tsc",
-    "test:server": "http-server -p 3000 -c-1 --cors"
+    "test:server": "http-server -p 3000 -c-1 --cors",
+    "tsc:dg": "tsc -w -p tsconfig.gen.docs.json",
+    "lite:dg": "lite-server -c bs-config-doc-gen.json",
+    "esdoc": "esdoc",
+    "doc:gen": "npm-run-all -p tsc:dg esdoc lite:dg"
   },
   "module": "index.js",
   "main": "lib/angust.umd.js",
@@ -39,6 +43,7 @@
       "type": "Apache 2.0"
     }
   ],
+  "author": "Alex Tranchenko",
   "contributors": [
     {
       "name": "Alex Tranchenko",
@@ -46,12 +51,11 @@
     }
   ],
   "dependencies": {
-    "@angular/common": "^4.2.1",
-    "@angular/core": "^4.2.1",
-    "@angular/router": "^4.2.1",
-    "monad-ts": "^0.3.3"
   },
   "devDependencies": {
+    "@angular/common": "^4.3.3",
+    "@angular/core": "^4.3.3",
+    "@angular/router": "^4.3.3",
     "@types/async": "^2.0.40",
     "@types/browser-sync": "^0.0.35",
     "@types/core-js": "^0.9.41",
@@ -74,12 +78,13 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-webpack": "^2.0.3",
     "lite-server": "^2.3.0",
+    "monad-ts": "^0.3.5",
     "npm-run-all": "^4.0.2",
     "source-map-explorer": "^1.3.3",
     "source-map-support": "^0.4.15",
     "ts-loader": "^2.1.0",
     "ts-node": "^3.0.6",
-    "typescript": "^2.3.4",
-    "webpack": "^2.6.1"
+    "typescript": "^2.4.2",
+    "webpack": "~2.7.0"
   }
 }

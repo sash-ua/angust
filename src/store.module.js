@@ -9,25 +9,22 @@ import { provideStore } from "./provider";
 /**
  *  Class StoreModule - the module provides and configure Store in Angular.
  */
-var StoreModule = StoreModule_1 = (function () {
-    function StoreModule() {
-    }
+let StoreModule = StoreModule_1 = class StoreModule {
     /**
      * configures the module's providers.
      * @param {any} INIT_STATE - initial state of Store
      * @return {ModuleWithProviders}
      */
-    StoreModule.forRoot = function (INIT_STATE) {
+    static forRoot(INIT_STATE) {
         return {
             ngModule: StoreModule_1,
             providers: provideStore(INIT_STATE)
         };
-    };
-    return StoreModule;
-}());
+    }
+};
 StoreModule = StoreModule_1 = __decorate([
     NgModule({})
 ], StoreModule);
 export { StoreModule };
 var StoreModule_1;
-//Copyright (c) 2017 Alex Tranchenko. All rights reserved. 
+// Copyright (c) 2017 Alex Tranchenko. All rights reserved.
