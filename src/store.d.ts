@@ -22,5 +22,5 @@ export declare class Store<T> extends StoreService<T> {
      * @param {Location} location - DI.
      * @param {any} INIT_STATE - initial state of Store.
      */
-    constructor(router: Router, location: Location, INIT_STATE: any);
+    constructor(router: Router, location: Location, INIT_STATE?: any);
 }

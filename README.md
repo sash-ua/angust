@@ -23,35 +23,7 @@ Angust is Angular4+ module(service) implements monad State to manipulate app's s
 
 Angust is Angular service implements a unidirectional dataflow for manipulation with app state in Angular4+ apps. The package will be useful in development of middle or small applications.
 
-### Ways to use:
-
-#### As a dependency.
-
-Import library or class in compatible for you way:
-```
-SystemJS.config({
-	map:{
-		...
-		'angust': 'node_modules/angust/lib/angust.umd.js'
-		...
-	}
-})
-...
-import {Store} from "angust";
-...
-```
-```
-import * as Store from "/node_modules/angust/index"
-```
-or
-```
-import {Store} from "/node_modules/angust/index"
-```
-
-[UP](#angust)
-
 ## Installation
-
 ```
 npm install angust monad-ts --save-dev
 ```
@@ -62,7 +34,19 @@ or
 
 ## Setup
 
-**A.** Create an initialization state object to initialize Store. This object should contain complete range of defined
+**1.** **SystemJS** Configure `systemjs.config.js` to register the module.
+```
+SystemJS.config({
+	map:{
+		...
+		'angust': 'node_modules/angust/lib/angust.umd.js'
+		...
+	}
+})
+```
+**2.** **WebPack** No special configuration.
+
+**3.** Create an initialization state object to initialize Store. This object should contain complete range of defined
  to store elements. It should be statically analyzable for AOT, therefore it shouldn't have calculated values for AOT
  compatibility.
  
@@ -72,7 +56,7 @@ export const INIT_STATE = {
 	svg_attrs: []
 	}
 ```
-**B.** In your app's main module, import an initialization state object(`INIT_STATE`) and use StoreModule.provideStore
+**4.** In your app's main module, import an initialization state object(`INIT_STATE`) and use StoreModule.forRoot
 (INIT_STATE) to provide it to Angular.
 ```
 import {StoreModule} from "angust";
@@ -81,12 +65,12 @@ import {INIT_STATE} from "./store/store.init";
 @NgModule({
   imports: [
     BrowserModule,
-    StoreModule.provideStore(INIT_STATE)
+    StoreModule.forRoot(INIT_STATE)
   ]
 })
 export class AppModule {}
 ```
-**C.** You can then inject the Store service into your components and services.
+**5.** You can then inject the Store service into your components and services.
  ```
  import {Store} from "angust";
  

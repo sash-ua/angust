@@ -32,7 +32,7 @@ export class Store<T> extends StoreService<T>{
     constructor(
         router: Router,
         location: Location,
-        INIT_STATE: any
+        INIT_STATE?: any
     ){
         super(router, location);
 

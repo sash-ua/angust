@@ -1,3 +1,13 @@
+# 0.0.5 (2017-08-18)
+
+### Changes
+
+* added Angular 5 compatibility.
+
+* Documentation update.
+
+* Dependencies was updated.
+
 # 0.0.4 (2017-08-11)
 
 ### Bugs fixed
@@ -6,7 +16,7 @@ Moved `dependencies` to `devDependencies` in package.json to prevent AOT and Web
 
 ### Changes
 
-Dependencies update.
+* Dependencies was updated.
 
 # 0.0.3 (2017-06-24)
 
@@ -19,7 +29,7 @@ Dependencies update.
 
 ### Changes
 
-Updated dependencies.
+* Dependencies was updated.
 
 # 0.0.1 (2017-05-30)
 

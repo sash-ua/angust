@@ -18,7 +18,7 @@ export function _storeFactory(router, location, init) {
  * @type {InjectionToken}
  * @private
  */
-export const _INITIAL_STATE = new InjectionToken('Token');
+export var _INITIAL_STATE = new InjectionToken('Token');
 /**
  * DI Provider function.
  * @param {any} initState - initial state of Store.
