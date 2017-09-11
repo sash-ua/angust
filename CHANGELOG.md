@@ -2,7 +2,7 @@
 
 ### Changes
 
-* **manager()**.
+* **manager()** can update a Store object and nested arrays and objects.
 
 # 0.0.5 (2017-08-18)
 
