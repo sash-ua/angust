@@ -56,6 +56,7 @@ export const INIT_STATE = {
 	svg_attrs: []
 	}
 ```
+
 **4.** In your app's main module, import an initialization state object(`INIT_STATE`) and use StoreModule.forRoot
 (INIT_STATE) to provide it to Angular.
 ```
