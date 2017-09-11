@@ -83,12 +83,12 @@ export class StoreService<T>{
         return (c: U): U=>{
             for(let k in v){
                 if(v.hasOwnProperty(k)){
-                    if (Object(v[k]) !== v[k] && c[k]!== v[k]) {
-                        c[k]= v[k];
+                    if (Object(v[k]) !== v[k]) {
+                        if(c[k]!== v[k]) {c[k]= v[k]}
                     } else if (Array.isArray(v[k])) {
                         Array.from(v[k]).forEach((val: any, i: number) => {
-                            if (Object(val) !== val && c[k][i] !== val){
-                                c[k][i] = val;
+                            if (Object(val) !== val){
+                                if (c[k][i] !== val) {c[k][i] = val}
                             } else {
                                 this._changeObject(val)(c[k][i])
                             }
