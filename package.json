@@ -50,7 +50,8 @@
       "email": "tranchenkoa@gmail.com"
     }
   ],
-  "dependencies": {},
+  "dependencies": {
+  },
   "devDependencies": {
     "@angular/common": "^4.3.3",
     "@angular/core": "^4.3.3",

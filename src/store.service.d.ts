@@ -41,16 +41,16 @@ export declare class StoreService<T> {
      */
     manager<U>(v?: U): T;
     /**
-     * changes an app state.
+     * update the app state.
      * @param {U} v - object with new values of variables of the app state.
      * @private
      */
     _updateState<U>(v: U): void;
     /**
      * changes the values of the given object `c` with values of `v`.
-     * @param {U} v - object with new values of variables of the app state.
+     * @param {any} v - object with new values of variables of the app state.
      * @return {function(c:U)=>U}
      * @private
      */
-    _changeObject<U>(v: U): Function;
+    _changeObject<U>(v: any): Function;
 }

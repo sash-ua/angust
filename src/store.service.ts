@@ -59,14 +59,13 @@ export class StoreService<T>{
      * @return {T}
      */
     manager<U>(v?: U ): T {
-        if(v) {
-            this._updateState(v)
+        if(v) {            this._updateState(v)
         }
         return this.state.get();
     }
 
     /**
-     * changes an app state.
+     * update the app state.
      * @param {U} v - object with new values of variables of the app state.
      * @private
      */
@@ -76,15 +75,27 @@ export class StoreService<T>{
 
     /**
      * changes the values of the given object `c` with values of `v`.
-     * @param {U} v - object with new values of variables of the app state.
+     * @param {any} v - object with new values of variables of the app state.
      * @return {function(c:U)=>U}
      * @private
      */
-    _changeObject<U>(v: U): Function{
+    _changeObject<U>(v: any): Function{
         return (c: U): U=>{
             for(let k in v){
                 if(v.hasOwnProperty(k)){
-                    c[k]= v[k];
+                    if (Object(v[k]) !== v[k] && c[k]!== v[k]) {
+                        c[k]= v[k];
+                    } else if (Array.isArray(v[k])) {
+                        Array.from(v[k]).forEach((val: any, i: number) => {
+                            if (Object(val) !== val && c[k][i] !== val){
+                                c[k][i] = val;
+                            } else {
+                                this._changeObject(val)(c[k][i])
+                            }
+                        })
+                    } else {
+                        this._changeObject(v[k])(c[k])
+                    }
                 }
             }
             return c;

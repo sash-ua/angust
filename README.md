@@ -50,7 +50,7 @@ SystemJS.config({
  to store elements. It should be statically analyzable for AOT, therefore it shouldn't have calculated values for AOT
  compatibility.
  
-** After initialization we can't add / remove objects' key, only to change values.
+**NB** After initialization we can't add / remove objects' key, only to change values.
 ```
 export const INIT_STATE = {
 	svg_attrs: []
@@ -110,7 +110,7 @@ Navigates forward in the platform's history.
 ```
 
 #### Manager
-It changes(optional) an app state and then it'll return the app state.
+It changes(optional) an app state and/or return the app state.
 ```
 	// State - {test:[g, b], next: 'g'}
 	// Return the app state only.
