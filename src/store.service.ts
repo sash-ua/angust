@@ -59,7 +59,8 @@ export class StoreService<T>{
      * @return {T}
      */
     manager<U>(v?: U ): T {
-        if(v) {            this._updateState(v)
+        if(v) {
+            this._updateState(v);
         }
         return this.state.get();
     }
@@ -70,7 +71,7 @@ export class StoreService<T>{
      * @private
      */
     _updateState<U>(v: U): void {
-        this.state.put(c => this._changeObject(v)(c));
+        this.state.put(c => this._updateObject(v)(c));
     }
 
     /**
@@ -79,22 +80,31 @@ export class StoreService<T>{
      * @return {function(c:U)=>U}
      * @private
      */
-    _changeObject<U>(v: any): Function{
+    _updateObject<U>(v: any): Function{
         return (c: U): U=>{
             for(let k in v){
                 if(v.hasOwnProperty(k)){
                     if (Object(v[k]) !== v[k]) {
-                        if(c[k]!== v[k]) {c[k]= v[k]}
+                        if(c[k]!== v[k]) { c[k]= v[k]}
                     } else if (Array.isArray(v[k])) {
                         Array.from(v[k]).forEach((val: any, i: number) => {
                             if (Object(val) !== val){
                                 if (c[k][i] !== val) {c[k][i] = val}
                             } else {
-                                this._changeObject(val)(c[k][i])
+                                this._updateObject(val)(c[k][i])
                             }
                         })
                     } else {
-                        this._changeObject(v[k])(c[k])
+                        if (v[k].constructor && v[k].constructor()) {
+                            let prim = v[k].constructor();
+                            if (Object(prim) !== prim){
+                                if(c[k]!== v[k]) { c[k]= v[k]}
+                            } else {
+                                this._updateObject(v[k])(c[k]);
+                            }
+                        } else {
+                            console.error(new Error('StoreService.manager() - update object Error!'));
+                        }
                     }
                 }
             }

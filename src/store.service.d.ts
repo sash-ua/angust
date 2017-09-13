@@ -52,5 +52,5 @@ export declare class StoreService<T> {
      * @return {function(c:U)=>U}
      * @private
      */
-    _changeObject<U>(v: any): Function;
+    _updateObject<U>(v: any): Function;
 }
