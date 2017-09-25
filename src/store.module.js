@@ -9,7 +9,7 @@ import { provideStore } from "./provider";
 /**
  *  Class StoreModule - the module provides and configure Store in Angular.
  */
-var StoreModule = (function () {
+var StoreModule = /** @class */ (function () {
     function StoreModule() {
     }
     StoreModule_1 = StoreModule;

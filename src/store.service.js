@@ -1,7 +1,7 @@
 /**
  * Class StoreService - base class for application state manipulations.
  */
-var StoreService = (function () {
+var StoreService = /** @class */ (function () {
     /**
      * creates an instance of class StoreService.
      * @param {Router} router - DI.

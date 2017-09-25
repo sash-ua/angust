@@ -1,3 +1,9 @@
+# 0.0.9 (2017-09-25)
+
+### Changes
+
+* Documentation and dependencies updated.
+
 # 0.0.6, 0.0.7 (2017-09-11), 0.0.8 (2017-09-13)
 
 ### Changes

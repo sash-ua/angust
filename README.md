@@ -4,7 +4,11 @@
 
 # Angust
 
-Angust is Angular4+ module(service) implements monad State to manipulate app's state. [Example app](https://github.com/sash-ua/gen_drift_monad-ts_a4).
+Angust is Angular4+ module(service) implements monad State to manipulate app's state.
+
+[Example app 1](https://github.com/sash-ua/gen_drift_monad-ts_a4).
+
+[Example app 2](https://sash-ua.github.io/todos-next/).
 
 **Introduction**
 * [Intro](#intro)
@@ -21,7 +25,8 @@ Angust is Angular4+ module(service) implements monad State to manipulate app's s
 
 ## Intro
 
-Angust is Angular service implements a unidirectional dataflow for manipulation with app state in Angular4+ apps. The package will be useful in development of middle or small applications.
+Angust is Angular service implements a unidirectional dataflow for manipulation with app state in Angular4+ apps. The package will be useful
+in development of middle or small applications.
 
 ## Installation
 ```
@@ -111,7 +116,7 @@ Navigates forward in the platform's history.
 ```
 
 #### Manager
-It changes(optional) an app state and/or return the app state.
+It update/change an app state and/or return the app state.
 ```
 	// State - {test:[g, b], next: 'g'}
 	// Return the app state only.
@@ -119,6 +124,23 @@ It changes(optional) an app state and/or return the app state.
 	
 	// Change and return the app state.
 	console.log(this.store.manager({test: 'f'}));   // {test: 'f', next: 'g'}
+```
+**NB:**
+If we update complex object:
+```
+	const obj = {f: 1, s: 2, th: 3};
+	// INIT_STATE - {test:obj, next: 'g'}
+	// State -> {test:{f: 1, s: 2, th: 3}, next: 'g'}
+	console.log(this.store.manager({test: {f: '2'}}));  // State -> {test:{f: '2', s: 2, th: 3}, next: 'g'}
+	console.log(obj);   // {f: 1, s: 2, th: 3};
+```
+If we want change complex object we can do it **but** be careful:
+```
+	const obj = {f: 1, s: 2, th: 3};
+	// State - {test: {f: 4}, next: 'g'}
+	console.log(this.store.manager().test = obj);  // State -> {test:{f: 1, s: 2, th: 3}, next: 'g'}. We set reference to `obj`.
+	console.log(this.store.manager({test: {f: 'foo', s: 2, th: 3}));  // State -> {test:{f: 'foo', s: 2, th: 3}, next: 'g'}.
+	console.log(obj);  // {f: 'foo', s: 2, th: 3} `obj` was updated by reference.
 ```
 
 #### NavigateTo

@@ -33,7 +33,7 @@ import { State } from "monad-ts";
 /**
  * Class Store - Angular service that provides monad State to Angular app.
  */
-var Store = (function (_super) {
+var Store = /** @class */ (function (_super) {
     __extends(Store, _super);
     /**
      * creates an instance of class Store.
