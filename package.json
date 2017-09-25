@@ -1,6 +1,6 @@
 {
   "name": "angust",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Angust for manipulation with app state in Angular4+ apps",
   "homepage": "https://github.com/sash-ua/angust",
   "repository": {
@@ -50,8 +50,7 @@
       "email": "tranchenkoa@gmail.com"
     }
   ],
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@angular/common": "^4.4.3",
     "@angular/core": "^4.4.3",
